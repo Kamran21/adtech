@@ -1,0 +1,37 @@
+.box{
+    position: relative;
+    min-width: 20rem;
+    min-height: 20rem;
+   
+    margin-bottom: 2rem;
+
+    &:not(:last-child){
+        margin-right: 2rem;
+    }
+
+    
+
+    background-color: var(--color-grey-light-3);
+    box-shadow: var(--shadow-dark);
+
+    &__notification{
+
+        display: inline-block;
+        position: absolute;
+        top: 1.5rem;
+        right: 1.5rem;
+
+        min-width: 5rem;
+        min-height: 5rem;
+
+        background-color: var(--color-primary-dark);
+        color: var(--color-grey-light-1);
+        font-size: 3rem;
+        font-weight: 200;
+        text-align: center;
+        padding: auto;
+        border-radius: 4px;
+
+
+    }
+}
