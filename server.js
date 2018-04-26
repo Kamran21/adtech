@@ -71,7 +71,7 @@ io.on('connection',function(socket){
 
     socket.emit('messages', mockDB);
 
-    setInterval( mockDBchange(mockDB, io),20000);
+    setInterval( mockDBchange(mockDB, io),5000);
 
     socket.on('disconnect', function(){
         console.log('user disconnected :(');
