@@ -32,14 +32,24 @@ mockDBchange = (mockDB, io) => {
     
     return function(){
 
-                var index, item, i;
+                var index=-1, item, i;
                 var arr=[];
                 var clonedTable=[...mockDB];
                 var elements=Math.floor(Math.random() * Math.floor(mockDB.length));
 
                 for(i=0;i<elements;i++){
+                    
+                    newIndex = p => {
+                        var index=Math.floor(Math.random() * Math.floor(clonedTable.length)); 
+                        while( p == index )
+                        {
+                            index=Math.floor(Math.random() * Math.floor(clonedTable.length));
+                        }
+                        return index;
+                    }
+                    
+                    index=newIndex(index);
 
-                    index=Math.floor(Math.random() * Math.floor(clonedTable.length));
                     mockDB[index].count++;
 
                     item=clonedTable.splice(index, 1)[0];
