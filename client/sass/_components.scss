@@ -31,7 +31,12 @@
         text-align: center;
         padding: auto;
         border-radius: 4px;
+        transition: background-color 0.2s ease-in;
 
+    }
 
+    &__update{
+        background-color: var(--color-green-dark-1); 
+        transform: scale(1.1, 1.1);
     }
 }

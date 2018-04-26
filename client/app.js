@@ -1,5 +1,10 @@
+var initState=0;
 function updateUI(data){
-    data.forEach( item => document.querySelector(".box-" + item.id + " span").innerHTML=item.count );
+    document.querySelectorAll('.box .box__notification').forEach( item=>item.classList.remove('box__update') );
+    data.forEach( item => {  var elm=document.querySelector(".box-" + item.id + " .box__notification");
+                             elm.innerHTML=item.count;
+                             elm.classList.add('box__update');
+                        });
 }
 
 var socket = io.connect('http://localhost:5000',{'forceNew': true});
@@ -7,6 +12,9 @@ var socket = io.connect('http://localhost:5000',{'forceNew': true});
 socket.on('messages', function (data) {
     
     console.table(data);
-    updateUI(data);
+    if(initState){
+        updateUI(data);
+    }
+    initState=1;
 
 });
