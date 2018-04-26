@@ -1,7 +1,7 @@
 var initState=0;
 function updateUI(data){
-    document.querySelectorAll('.box .box__notification').forEach( item=>item.classList.remove('box__update') );
-    data.forEach( item => {  var elm=document.querySelector(".box-" + item.id + " .box__notification");
+    document.querySelectorAll('.box__update').forEach( item=>item.classList.remove('box__update') );
+    data.forEach( item => {  var elm=document.getElementById("box__notification-" + item.id );
                              elm.innerHTML=item.count;
                              elm.classList.add('box__update');
                         });
